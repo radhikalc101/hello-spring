@@ -1,4 +1,4 @@
-package org.launchcode.boot.studios.controllers;
+package org.launchcode.boot.hellospring.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
