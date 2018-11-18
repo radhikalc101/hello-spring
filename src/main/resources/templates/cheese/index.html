@@ -3,14 +3,26 @@
 <head th:replace="fragments :: head"></head>
 
 <body>
-    <h1 th:text="${title}">Default Title</h1>
-    <nav th:replace="fragments :: navigation"></nav>
+<h1 th:text="${title}">Default Title</h1>
+<nav th:replace="fragments :: navigation"></nav>
 
-    <p th:unless="${cheeses} and ${cheeses.size()}">no cheese:(</p>
+<p th:unless="${cheeses} and ${cheeses.size()}">no cheese:(</p>
 
-<ul><!--th:each is used as for loop cheese in cheeses.th:text = value of the itaretable variable.-->
-    <li th:each="cheese : ${cheeses}" th:text="${cheese}"></li>
+<!--<ul><!--th:each is used as for loop cheese in cheeses.th:text = value of the itaretable variable.-->
+<!--<li th:each="cheese : ${cheeses}" th:text="${cheese}"></li></ul>-->
+<form action="/cheese/delete" method="post">
+    <table th:if="${cheeses} and ${cheeses.size()}">
+        <tr><th></th><th>Cheese Name</th><th>Description</th></tr>
+        <hr/>
+        <tr th:each="cheese : ${cheeses}">
+            <td><input type="checkbox" name="cheese" th:value="${mapItem.key}"/></td>
+            <td th:text="${cheese.key}">Key</td>
+            <td th:text="${cheese.value}">Value</td>
+        </tr>
+    </table>
+    <input th:if="${cheeses} and ${cheeses.size()}" type="submit" value="Delete">
+</form>
+<!--<p th:text="${cheeseName + '!' + cheeseDescription}"></p>-->
 
-</ul>
 </body>
 </html>
