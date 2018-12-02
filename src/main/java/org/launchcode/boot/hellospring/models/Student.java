@@ -77,6 +77,7 @@ public class Student {
     public Teacher getTeacher() {
         return this.teacher;
     }
+
     protected void setGrade(String aGrade){
         this.grade = aGrade;
 
@@ -90,6 +91,17 @@ public class Student {
         this.teacher = aTeacher;
     }
 
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("id:").append(this.id)
+                .append("\nfirstName:").append(this.firstName)
+                .append("\nlastName: ").append(this.lastName)
+                .append("\ngrade: ").append(this.grade)
+                .append("\nschool: ").append(this.school);
+
+        return sb.toString();
+    }
+
     public void addMarks(String subject,Integer marks){
         marksList.put(subject,marks);
 
@@ -97,4 +109,7 @@ public class Student {
     public HashMap<String,Integer> getMarksList(){
         return this.marksList;
     }
+
+
+    //@Autowired
 }

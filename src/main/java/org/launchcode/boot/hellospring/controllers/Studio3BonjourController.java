@@ -28,6 +28,7 @@ public class Studio3BonjourController {
                 "</select>"+
                 "<input type = 'submit' value = 'Gteat me!'/>"+
                 "</form>";
+//        <option value = "Spanish">Spanish</option>
         return html;
 
     }
@@ -36,6 +37,19 @@ public class Studio3BonjourController {
     public String helloPost(HttpServletRequest request) {
         String language = request.getParameter("language");
         String name = request.getParameter("name");
+
+//        String greeting;
+//        switch(language) {
+//          case "English":
+//              greeting = "Hello";
+//                  break;
+//          case "Italian":
+//              greeting = "Ciao"
+//                  break;
+//          default:
+//              greeting = "Hello,Ciao";
+//        return greeting + " " + name;
+
         Integer visitedCount = this.getCount(name);
         return "<h1 style='color:red'>" + language + " " + name + "</h1><h4>This user visited "+visitedCount+" times";
     }

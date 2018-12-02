@@ -15,7 +15,7 @@
         <tr><th></th><th>Cheese Name</th><th>Description</th></tr>
         <hr/>
         <tr th:each="cheese : ${cheeses}">
-            <td><input type="checkbox" name="cheese" th:value="${mapItem.key}"/></td>
+            <td><input type="checkbox" name="cheese" th:value="${cheese.key}"/></td>
             <td th:text="${cheese.key}">Key</td>
             <td th:text="${cheese.value}">Value</td>
         </tr>
