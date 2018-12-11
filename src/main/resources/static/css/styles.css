@@ -1,10 +1,13 @@
 body {
     font-family: sans-serif;
-    color: red;
+    color: green;
 }
 h1 {
 color: blue;
 }
 th{
 color:green;
+}
+.error{
+color:red
 }

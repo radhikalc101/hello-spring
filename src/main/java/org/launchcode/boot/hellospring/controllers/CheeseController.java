@@ -1,6 +1,7 @@
 package org.launchcode.boot.hellospring.controllers;
 
 import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+import org.launchcode.boot.hellospring.models.CheeseData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class CheeseController {
     //request path:/cheese
     @RequestMapping(value = "")
     public String index(Model model){
-        model.addAttribute("cheeses",cheeses);
+        model.addAttribute("cheeses", CheeseData.getAll());
         model.addAttribute("title","My Cheeses");
 
         return "cheese/index";//rendering template
@@ -59,10 +60,19 @@ public class CheeseController {
     }
 
     private boolean isValid(String cheeseName) {
-//        return cheeseName.matches("[a-zA-Z]+(\\s[a-zA-Z]*)");
+        //return cheeseName.matches("[a-zA-Z]+(\\s[a-zA-Z]*)");
 //        return cheeseName.matches("[a-zA-Z]+(\\s)");
         return cheeseName.matches("[a-zA-Z]*[^0-9][a-zA-Z]*(\\s?)");
     }
+
+
+//    @RequestMapping(value = "delete", method = RequestMethod.POST)
+//    public String processRemoveCheeseForm(@RequestParam int[] cheeseIds){
+//        for (int cheeseId : cheeseIds){
+//            CheeseData.remove(cheeseId);
+//        }
+//        return "redirect:";
+//    }
 
     @RequestMapping(value = "delete", method = RequestMethod.POST )
     public String processRemoveCheeseForm(HttpServletRequest request) {

@@ -1,12 +1,12 @@
-package org.launchcode.boot.hellospring.models;
+package org.launchcode.boot.hellospring.modelspractice;
 
 public class Teacher {
     private String name;
     private String teachingGrades;
     private String rating;
 
-    public Teacher(String aname, String teachingGrade,String ratings){
-        this.name=aname;
+    public Teacher(String name, String teachingGrade,String ratings){
+        this.name=name;
         this.teachingGrades=teachingGrade;
         this.rating=ratings;
     }

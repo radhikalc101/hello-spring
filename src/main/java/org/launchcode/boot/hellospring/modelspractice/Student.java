@@ -1,6 +1,5 @@
-package org.launchcode.boot.hellospring.models;
+package org.launchcode.boot.hellospring.modelspractice;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Date;
